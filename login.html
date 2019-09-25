@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>检宗-登录</title>
+    <link rel="stylesheet" href="./lib/layui-v2.5.5/css/layui.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="form-container">
+        <div class="form-logo">
+          <img class="img_1" src="images/login_1.png" />
+          <img class="img_2" src="images/login_2.png" />
+        </div>
+        <form class="layui-form" action="">
+          <div class="layui-form-item">
+            <select name="role" lay-verify="required">
+              <option value=""></option>
+              <option value="0">检察长</option>
+              <option value="1">分院检察长</option>
+              <option value="2">院领导</option>
+              <option value="3">部门负责人</option>
+              <option value="4">检察官</option>
+            </select>
+          </div>
+          <div class="layui-form-item">
+            <input
+              type="text"
+              name="title"
+              value="湖北省人民检察院"
+              required
+              lay-verify="required"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+          <div class="layui-form-item">
+            <input
+              type="text"
+              name="userName"
+              value="张丽娜"
+              required
+              lay-verify="required"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+          <div class="layui-form-item">
+            <input
+              name="password"
+              type="password"
+              required
+              lay-verify="required"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+          <div class="layui-form-item">
+            <button type="button" lay-submit lay-filter="formDemo" class="layui-btn layui-btn-fluid">登录</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script src="./lib/jquery.js"></script>
+  <script src="./lib/layui-v2.5.5/layui.js"></script>
+  <script>
+    layui.use(['form', 'layedit'], function() {
+      var form = layui.form;
+
+      //监听提交
+      form.on('submit(formDemo)', function(data) {
+        layer.alert(JSON.stringify(data.field), {
+          title: '最终的提交信息'
+        });
+        return false;
+      });
+    });
+  </script>
+</html>

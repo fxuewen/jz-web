@@ -1,0 +1,54 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+#app {
+  width: 100%;
+  height: 100%;
+  background: url(../images/login_bg.jpg) no-repeat top center;
+  background-size: 100%;
+  text-align: center;
+}
+#app .form-container {
+  position: relative;
+  border-width: 0px;
+  position: absolute;
+  left: 709px;
+  top: 240px;
+  width: 502px;
+  height: 575px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+#app .form-container .form-logo {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+#app .form-container .form-logo .img_1 {
+  width: 57px;
+  height: 60px;
+}
+#app .form-container .form-logo .img_2 {
+  width: 240px;
+  height: 53px;
+}
+#app .form-container .layui-form {
+  width: 367px;
+  margin: 30px auto;
+}
+#app .form-container .layui-form .layui-form-item {
+  margin-bottom: 32px;
+}
+#app .form-container .layui-form .layui-form-item .layui-input,
+#app .form-container .layui-form .layui-form-item .layui-select,
+#app .form-container .layui-form .layui-form-item .layui-textarea,
+#app .form-container .layui-form .layui-form-item button {
+  height: 42px;
+  line-height: 1.3;
+  line-height: 42px\9;
+  border-width: 1px;
+  border-radius: 2px;
+}
