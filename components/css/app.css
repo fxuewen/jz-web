@@ -238,6 +238,7 @@ body {
   height: calc(100% - 42px);
   padding: 12px;
   box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .custom-card-container .card-content img {

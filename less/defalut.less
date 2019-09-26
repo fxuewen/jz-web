@@ -1,7 +1,7 @@
 .layui-body {
   overflow: hidden;
 }
-
+@hoverColor: #42a0f8;
 .layui-header {
   .logo {
     .logo-icon {
@@ -17,6 +17,61 @@
 
     .img_2 {
       height: 36px;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+
+  &:visited {
+    color: #000;
+  }
+
+  &:active {
+    color: #000;
+  }
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.news-list {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+
+  .news-item {
+    height: 36px;
+    line-height: 36px;
+    position: relative;
+
+    .text {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 76%;
+      cursor: pointer;
+      margin: 0;
+      text-align: left;
+
+      &:hover {
+        color: @hoverColor;
+        text-decoration: underline;
+      }
+    }
+
+    .time {
+      position: absolute;
+      right: 0;
+      color: #999;
     }
   }
 }

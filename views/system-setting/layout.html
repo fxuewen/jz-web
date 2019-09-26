@@ -27,5 +27,12 @@
     <script src="../../lib/include.js"></script>
     <script src="../../lib/layui-v2.5.5/layui.js"></script>
     <script src="../../js/default.js"></script>
+    <script>
+      $(window).load(function() {
+        layui.use('element', function() {
+          var element = layui.element;
+        });
+      });
+    </script>
   </body>
 </html>
