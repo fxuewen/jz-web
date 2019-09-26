@@ -10,6 +10,13 @@
 .layui-layout-admin .layui-side .layui-nav {
   background-color: transparent;
 }
+.layui-layout-admin .layui-side .layui-nav img {
+  position: relative;
+  top: -2px;
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+}
 .layui-layout-admin .layui-side .layui-nav .layui-nav-item > a:hover {
   background-color: rgba(255, 255, 255, 0.4) !important;
 }
