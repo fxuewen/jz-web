@@ -17,8 +17,7 @@
         </div>
         <form class="layui-form" action="">
           <div class="layui-form-item">
-            <select name="role" lay-verify="required">
-              <option value=""></option>
+            <select name="role" value="4" lay-verify="required">
               <option value="0">检察长</option>
               <option value="1">分院检察长</option>
               <option value="2">院领导</option>
@@ -73,10 +72,13 @@
 
       //监听提交
       form.on('submit(formDemo)', function(data) {
-        layer.alert(JSON.stringify(data.field), {
-          title: '最终的提交信息'
-        });
-        return false;
+        var field = data.field;
+        if ((field.userName === '张丽娜' || field.userName === '张三') && field.password === '123456') {
+          localStorage.setItem('userInfo', JSON.stringify(field));
+          window.location.replace('/');
+        } else {
+          layer.alert('用户名或密码错误');
+        }
       });
     });
   </script>

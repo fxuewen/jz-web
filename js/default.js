@@ -19,4 +19,7 @@ $(window).load(function() {
     var path = $(this).attr('route-path') || '';
     window.location.replace(path);
   });
+
+  var userInfo = JSON.parse(localStorage.getItem('userInfo'));
+  $('#user-name').html(userInfo.userName);
 });
