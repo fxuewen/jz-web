@@ -1,22 +1,86 @@
-.layui-body {
-  overflow: hidden;
-}
-@hoverColor: #42a0f8;
-.layui-header {
-  .logo {
-    .logo-icon {
-      position: relative;
-      left: 16px;
-      top: 12px;
+@brightColor: rgba(57, 162, 253, 1);
+@hoverColor: #39a2fd;
+.layui-layout-admin {
+  .layui-side {
+    top: 0;
+    background: linear-gradient(#3aa5ff, #0061ce);
+    background-color: @brightColor;
+
+    .header {
+      height: 80px;
+      line-height: 80px;
     }
 
-    .img_1 {
-      width: 34px;
-      height: 36px;
+    .layui-nav {
+      background-color: transparent;
+
+      .layui-nav-item > a {
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.4) !important;
+        }
+      }
+
+      .layui-nav-child {
+        background-color: transparent !important;
+
+        dd {
+          padding-left: 16px;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.4) !important;
+          }
+        }
+      }
+
+      .layui-this {
+        background-color: rgba(255, 255, 255, 0.4) !important;
+      }
+
+      a {
+        background-color: transparent !important;
+        color: #fff;
+      }
+    }
+  }
+
+  .layui-body {
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  .layui-header {
+    height: 80px;
+    line-height: 80px;
+    background-color: #fff !important;
+
+    .layui-bg-blue {
+      background-color: #fff !important;
+
+      .layui-anim,
+      .layui-anim-upbit {
+        border: none !important;
+      }
     }
 
-    .img_2 {
-      height: 36px;
+    a {
+      color: #333 !important;
+    }
+
+    .logo {
+      .logo-icon {
+        position: relative;
+        left: 16px;
+      }
+
+      .img_1 {
+        width: 34px;
+        height: 36px;
+      }
+
+      .img_2 {
+        height: 36px;
+      }
     }
   }
 }
@@ -63,7 +127,7 @@ li {
       text-align: left;
 
       &:hover {
-        color: @hoverColor;
+        color: @brightColor;
         text-decoration: underline;
       }
     }
@@ -74,4 +138,8 @@ li {
       color: #999;
     }
   }
+}
+
+.el-main {
+  padding: 0;
 }

@@ -1,16 +1,63 @@
-.layui-body {
+.layui-layout-admin .layui-side {
+  top: 0;
+  background: linear-gradient(#3aa5ff, #0061ce);
+  background-color: #39a2fd;
+}
+.layui-layout-admin .layui-side .header {
+  height: 80px;
+  line-height: 80px;
+}
+.layui-layout-admin .layui-side .layui-nav {
+  background-color: transparent;
+}
+.layui-layout-admin .layui-side .layui-nav .layui-nav-item > a:hover {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+.layui-layout-admin .layui-side .layui-nav .layui-nav-child {
+  background-color: transparent !important;
+}
+.layui-layout-admin .layui-side .layui-nav .layui-nav-child dd {
+  padding-left: 16px;
+}
+.layui-layout-admin .layui-side .layui-nav .layui-nav-child dd:hover {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+.layui-layout-admin .layui-side .layui-nav .layui-this {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+.layui-layout-admin .layui-side .layui-nav a {
+  background-color: transparent !important;
+  color: #fff;
+}
+.layui-layout-admin .layui-body {
+  top: 0;
+  bottom: 0;
   overflow: hidden;
 }
-.layui-header .logo .logo-icon {
+.layui-layout-admin .layui-header {
+  height: 80px;
+  line-height: 80px;
+  background-color: #fff !important;
+}
+.layui-layout-admin .layui-header .layui-bg-blue {
+  background-color: #fff !important;
+}
+.layui-layout-admin .layui-header .layui-bg-blue .layui-anim,
+.layui-layout-admin .layui-header .layui-bg-blue .layui-anim-upbit {
+  border: none !important;
+}
+.layui-layout-admin .layui-header a {
+  color: #333 !important;
+}
+.layui-layout-admin .layui-header .logo .logo-icon {
   position: relative;
   left: 16px;
-  top: 12px;
 }
-.layui-header .logo .img_1 {
+.layui-layout-admin .layui-header .logo .img_1 {
   width: 34px;
   height: 36px;
 }
-.layui-header .logo .img_2 {
+.layui-layout-admin .layui-header .logo .img_2 {
   height: 36px;
 }
 a {
@@ -51,11 +98,14 @@ li {
   text-align: left;
 }
 .news-list .news-item .text:hover {
-  color: #42a0f8;
+  color: #39a2fd;
   text-decoration: underline;
 }
 .news-list .news-item .time {
   position: absolute;
   right: 0;
   color: #999;
+}
+.el-main {
+  padding: 0;
 }
