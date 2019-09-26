@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/element.min.css" />
+    <script src="js/vue.js"></script>
+    <script src="js/element.min.js"></script>
+    <script src="js/vue-grid-layout.umd.min.js"></script>
+    <script src="js/custom-card-show.js"></script>
+  </head>
+  <body>
+    <el-main v-cloak id="app" tabindex="1">
+      <el-scrollbar id="layout-container" class="main-content">
+        <grid-layout
+          :layout.sync="layout"
+          :col-num="8"
+          :row-height="100"
+          :is-draggable="true"
+          :is-resizable="true"
+          :vertical-compact="true"
+          :use-css-transforms="true"
+          :responsive="true"
+          :margin="[16, 16]"
+        >
+          <grid-item v-for="item in layout" :x="item.x" :y="item.y" :w="item.w" :h="item.h" :i="item.i">
+            <custom-card-show :item="item" class="text"></custom-card-show>
+          </grid-item>
+        </grid-layout>
+      </el-scrollbar>
+    </el-main>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          // 布局
+          layout: []
+        },
+        mounted() {
+          this.refreshCurrentLayout();
+        },
+        methods: {
+          // 刷新当前布局
+          refreshCurrentLayout() {
+            const layoutMapStr = localStorage.getItem('layoutMap');
+            let layoutMap = {};
+            if (layoutMapStr) {
+              layoutMap = JSON.parse(layoutMapStr);
+            }
+            this.layout = layoutMap.og_1 || [];
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
