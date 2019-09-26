@@ -29,9 +29,52 @@
     <script src="./js/default.js"></script>
     <script>
       $(window).load(function() {
-        layui.use('element', function() {
+        layui.use(['element', 'layer'], function() {
           var element = layui.element;
         });
+
+        var ws = new WebSocket('ws://192.168.21.35:12345/websocket?userId=userId0');
+        //readyState属性返回实例对象的当前状态，共有四种。
+        //CONNECTING：值为0，表示正在连接。
+        //OPEN：值为1，表示连接成功，可以通信了。
+        //CLOSING：值为2，表示连接正在关闭。
+        //CLOSED：值为3，表示连接已经关闭，或者打开连接失败
+        //例如：if (ws.readyState == WebSocket.CONNECTING) { }
+
+        //【用于指定连接成功后的回调函数】
+        ws.onopen = function(evt) {
+          console.log('Connection open ...');
+          ws.send('Hello WebSockets!');
+        };
+        //ws.addEventListener('open', function (event) {
+        //    ws.send('Hello Server!');
+        //};
+
+        //【用于指定收到服务器数据后的回调函数】
+        //【服务器数据有可能是文本，也有可能是二进制数据，需要判断】
+        ws.onmessage = function(event) {
+          if (typeof event.data === String) {
+            console.log('Received data string');
+          }
+
+          if (event.data instanceof ArrayBuffer) {
+            var buffer = event.data;
+            console.log('Received arraybuffer');
+          }
+
+          var data = JSON.parse(event.data);
+          layer.open({
+            type: 1,
+            offset: 'rb', //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+            id: 'layerDemo' + 1, //防止重复弹出
+            area: ['300px', '200px'],
+            content: '<div style="padding: 20px">' + data.title + '</div>',
+            shade: 0, //不显示遮罩
+            yes: function() {
+              layer.closeAll();
+            }
+          });
+        };
       });
     </script>
   </body>
