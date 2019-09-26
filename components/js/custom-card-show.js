@@ -2,19 +2,9 @@ Vue.component('custom-card-show', {
   render: function(createElement) {
     return createElement('div', { class: 'custom-card-container' }, [
       createElement('div', { class: 'card-header clearfix' }, [
-        createElement('span', { class: 'title', domProps: { innerHTML: this.item.title } }),
-        createElement('div', { class: 'card-header-btn' }, [
-          createElement('div', { class: 'card-header-btn-edit' }, [
-            createElement('i', { class: 'el-icon-edit' }),
-            createElement('span', { domProps: { innerHTML: '编辑' } })
-          ]),
-          createElement('div', { class: 'card-header-btn-delete' }, [
-            createElement('i', { class: 'el-icon-delete' }),
-            createElement('span', { domProps: { innerHTML: '删除' }, on: { click: this.deleteCard } })
-          ])
-        ])
+        createElement('span', { class: 'title', domProps: { innerHTML: this.item.title } })
       ]),
-      createElement('div', { class: 'card-content' }, [createElement('img', { attrs: { src: this.item.imgUrl } })])
+      createElement('div', { class: 'card-content', attrs: { id: this.item.i } }, [])
     ]);
   },
   props: {
@@ -27,6 +17,9 @@ Vue.component('custom-card-show', {
   },
   data() {
     return {};
+  },
+  mounted() {
+    $('#' + this.item.i).load(this.item.templateUrl);
   },
   methods: {
     // 删除卡片

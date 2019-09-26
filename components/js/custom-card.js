@@ -14,7 +14,7 @@ Vue.component('custom-card', {
           ])
         ])
       ]),
-      createElement('div', { class: 'card-content' }, [createElement('img', { attrs: { src: this.item.imgUrl } })])
+      createElement('div', { class: 'card-content', attrs: { id: this.item.i } }, [])
     ]);
   },
   props: {
@@ -24,6 +24,9 @@ Vue.component('custom-card', {
         return {};
       }
     }
+  },
+  mounted() {
+    $('#' + this.item.i).load(this.item.templateUrl);
   },
   data() {
     return {};

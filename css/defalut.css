@@ -1,12 +1,13 @@
 .layui-body {
   overflow: hidden;
 }
-.layui-header .logo img {
+.layui-header .logo .logo-icon {
   position: relative;
   left: 16px;
   top: 12px;
 }
 .layui-header .logo .img_1 {
+  width: 34px;
   height: 36px;
 }
 .layui-header .logo .img_2 {
